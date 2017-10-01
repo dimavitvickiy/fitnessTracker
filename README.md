@@ -6,4 +6,4 @@ project for study purposes
 - flask 12.2
 
 ### Install
-pip install -r requirements.txt
+`pip install -r requirements.txt`
