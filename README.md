@@ -1,7 +1,7 @@
 # fitnessTracker
 project for study purposes
 
-##Requirements
+## Requirements
 - python 3.4
 - flask 12.2
 
