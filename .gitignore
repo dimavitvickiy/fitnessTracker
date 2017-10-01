@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # other git ignore files
-.idea/*
+.idexa/*

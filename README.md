@@ -7,3 +7,6 @@ project for study purposes
 
 ### Install
 `pip install -r requirements.txt`
+
+# Usage 
+`python manage.py runserver`
