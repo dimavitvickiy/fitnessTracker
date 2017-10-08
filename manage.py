@@ -1,9 +1,14 @@
 from flask import Flask
+from redis import Redis
+
 app = Flask(__name__)
+redis = Redis(host='redis', port=6379)
 
-PROJECT_NAME = "Fitness Tracker"
 
-
-@app.route("/")
+@app.route('/')
 def hello():
-    return "Hello {}".format(PROJECT_NAME)
+    return 'Fitness Tracker!'
+
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", debug=True)
