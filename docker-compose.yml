@@ -8,3 +8,9 @@ services:
      - .:/code
   redis:
     image: "redis:alpine"
+  postgres:
+    image: postgres:9.5
+    env_file:
+      - .dbconfig
+    expose:
+      - 5432
