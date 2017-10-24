@@ -1,4 +1,4 @@
-# fitnessTracker
+# Fitness Tracker
 project for study purposes
 
 ## Requirements
@@ -6,7 +6,10 @@ project for study purposes
 - flask 0.12.2
 
 ### Install
-`pip install -r requirements.txt`
+Create file `config.py` and fill it like in the example `configExample.py`
+
+Create virtualenv (recommended) and run:  
+```pip install -r requirements.txt```
 
 # Usage 
 `python manage.py runserver`
