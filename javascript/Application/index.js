@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-class Hello extends React.Component {
+class Application extends React.Component {
     render() {
-        return <h1>Hello</h1>
+        return (
+            <div>
+                <h1>Fitness Tracker Application from React 16</h1>
+                <button className="btn btn-outline-primary">Start my tracker!</button>
+            </div>
+        )
     }
 }
 
-class World extends React.Component {
-    render() {
-        return <h1>World</h1>
-    }
-}
 
-
-ReactDOM.render(<Hello/>, document.getElementById('hello'));
-ReactDOM.render(<World/>, document.getElementById('world'));
+ReactDOM.render(
+    <Application/>,
+    document.getElementById('app')
+);
