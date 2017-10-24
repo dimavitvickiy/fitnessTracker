@@ -102,3 +102,6 @@ ENV/
 
 # other git ignore files
 .idea/*
+
+
+config.py
