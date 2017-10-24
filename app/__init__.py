@@ -7,7 +7,7 @@ from redis import Redis
 from app.blueprints import set_up_user_views
 
 app = Flask(__name__)
-app.config.from_pyfile('../config.py')
+app.config.from_pyfile('config.py')
 
 db = SQLAlchemy(app)
 redis = Redis(host='redis', port=6379)
