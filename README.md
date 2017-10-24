@@ -9,7 +9,7 @@ project for study purposes
 Create file `config.py` and fill it like in the example `configExample.py`
 
 Create virtualenv (recommended) and run:  
-```pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
 # Usage 
 `python manage.py runserver`
