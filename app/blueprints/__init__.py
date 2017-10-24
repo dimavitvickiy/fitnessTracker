@@ -1,11 +1,13 @@
 from flask import Blueprint
 
 
-def set_up_user_views(app):
+def set_up_user_views(app, url_prefix):
     from app.entities.user.views import UserList
 
-    user = Blueprint('user', app, url_prefix='user')
-    user.add_url_rule(
+    user_blueprint = Blueprint('user', __name__)
+    user_blueprint.add_url_rule(
         '/list',
-        UserList.as_view('user_list'),
+        view_func=UserList.as_view('user_list'),
     )
+
+    app.register_blueprint(user_blueprint, url_prefix=url_prefix)

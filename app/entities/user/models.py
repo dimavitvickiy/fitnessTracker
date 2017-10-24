@@ -1,6 +1,7 @@
 from app import db
+from app.entities.common.models import BaseModel
 
 
-class User(db.Model):
-    username = db.String(nullable=False)
-    password = db.String(nullable=False)
+class User(BaseModel):
+    username = db.Column(db.String, nullable=False, unique=True)
+    password = db.Column(db.String, nullable=False)
