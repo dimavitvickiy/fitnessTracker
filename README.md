@@ -1,9 +1,11 @@
 # Fitness Tracker
 project for study purposes
 
-## Requirements
+### Requirements
+- npm 5.4.2
 - python 3.4
-- flask 0.12.2
+- webpack 3.0.0
+- react 0.16.0
 
 ### Install
 Create virtualenv (recommended) and run:  
@@ -11,9 +13,12 @@ Create virtualenv (recommended) and run:
 
 Create file `config.py` and fill it like in the example `configExample.py`
 
-Run migrations  
+Run migrations:  
 `python manage.py db migrate`  
 `python manage.py db upgrade`
 
-# Usage 
+Bundle js:  
+`npm run build`
+
+### Usage 
 `python manage.py runserver`
