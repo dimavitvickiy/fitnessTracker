@@ -32,8 +32,9 @@ manager.add_command('db', MigrateCommand)
 set_up_user_views(app, url_prefix='/user')
 
 
-@app.route('/')
-def index():
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
     return render_template(
         'index.html.jinja2',
     )
