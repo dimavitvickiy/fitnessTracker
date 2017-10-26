@@ -30,6 +30,9 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     plugins: [
         new ExtractTextPlugin(
             "../css/[name].css", {

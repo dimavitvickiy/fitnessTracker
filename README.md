@@ -3,7 +3,8 @@ project for study purposes
 
 ### Requirements
 - npm 5.4.2
-- python 3.4
+- python 3.6
+- postgreSQL 9.5
 - webpack 3.0.0
 - react 0.16.0
 
