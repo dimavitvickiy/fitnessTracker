@@ -1,13 +1,66 @@
 import React from 'react';
+import { Calendar, Badge } from 'antd';
+
+
+function getListData(value) {
+  let listData;
+  switch (value.date()) {
+    case 8:
+      listData = [
+        { type: 'warning', content: 'This is warning event.' },
+        { type: 'success', content: 'This is usual event.' },
+      ]; break;
+    case 10:
+      listData = [
+        { type: 'warning', content: 'This is warning event.' },
+        { type: 'success', content: 'This is usual event.' },
+        { type: 'error', content: 'This is error event.' },
+      ]; break;
+    case 15:
+      listData = [
+        { type: 'warning', content: 'This is warning event', id: 1},
+        { type: 'success', content: 'This is very long usual event', id: 2 },
+        { type: 'error', content: 'This is error event 1.', id:3 },
+      ]; break;
+    default:
+  }
+  return listData || [];
+}
+
+function dateCellRender(value) {
+  const listData = getListData(value);
+  return (
+    <ul className="events">
+      {
+        listData.map(item => (
+          <li key={item.content} onClick={ () => console.log(`Item ${item.id} Clicked`) } style={{ listStyleType: 'none' }}>
+            <Badge status={item.type} text={item.content} />
+          </li>
+        ))
+      }
+    </ul>
+  );
+}
+
+function getMonthData(value) {
+  if (value.month() === 8) {
+    return 1394;
+  }
+}
+
+function monthCellRender(value) {
+  const num = getMonthData(value);
+  return num ? (
+    <div className="notes-month">
+      <section>{num}</section>
+      <span>Backlog number</span>
+    </div>
+  ) : null;
+}
+
+
 export const Schedule = () => (
     <div>
-        <h1>Schedule</h1>
-        <ul>
-            <li>Timeline 1</li>
-            <li>Timeline 2</li>
-            <li>Timeline 3</li>
-            <li>Timeline 4</li>
-        </ul>
-        <input className="form-control"/>
+        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
     </div>
 );

@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/dimavitvickiy/fitnessTracker#readme",
   "dependencies": {
+    "antd": "^3.0.0",
+    "babel-plugin-import": "^1.6.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
