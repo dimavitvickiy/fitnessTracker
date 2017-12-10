@@ -44,8 +44,8 @@ export default class ApiRequest {
    */
   static get(url, params = {}) {
     url = !_.isEmpty(params) ? `${url}?${queryString.stringify(params)}` : url;
-    return fetch(url, REQUEST_PARAMS).then(response =>
-      ApiResponse.handle(response));
+    return fetch(url, REQUEST_PARAMS)
+      .then(response => ApiResponse.handle(response));
   }
 
   /**
@@ -89,37 +89,6 @@ export default class ApiRequest {
         method: 'DELETE',
         headers: DEFAULT_HEADERS,
         body: JSON.stringify(body),
-      }),
-    ).then(response => ApiResponse.handle(response));
-  }
-
-  /**
-   *
-   * @param { string } url
-   * @param {FormData} formData
-   */
-  static formDataPost(url, formData) {
-    return fetch(
-      url,
-      _.assign({}, REQUEST_PARAMS, {
-        method: 'POST',
-        headers: {
-          'X-CSRFToken': window.csrfToken,
-        },
-        body: formData,
-      }),
-    ).then(response => ApiResponse.handle(response));
-  }
-
-  static formDataPut(url, formData) {
-    return fetch(
-      url,
-      _.assign({}, REQUEST_PARAMS, {
-        method: 'PUT',
-        headers: {
-          'X-CSRFToken': window.csrfToken,
-        },
-        body: formData,
       }),
     ).then(response => ApiResponse.handle(response));
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import {Form, Button, Input, Icon, Row, Col} from 'antd';
 import autobind from 'autobind-decorator';
 
+import { post } from '_common/ApiRequest';
+
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -30,6 +32,11 @@ export class LoginForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     console.log('submit');
+    const data = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    post('/login', data).then(() => console.log('success')).catch(() => console.log('error'));
   }
 
   render() {
