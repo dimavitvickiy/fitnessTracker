@@ -1,6 +1,6 @@
-from flask import jsonify, request
+from flask import jsonify, request, redirect
 from flask.views import MethodView
-from flask_login import login_user
+from flask_login import login_user, logout_user
 
 from app.entities.user.models import User
 from app.entities.user.schemas import UserSchema
@@ -32,3 +32,9 @@ class UserLogin(MethodView):
             login_user(user)
             return jsonify({})
         return jsonify({'error': 'User does not exist'}), 400
+
+
+class UserLogout(MethodView):
+    def get(self):
+        logout_user()
+        return redirect('/')

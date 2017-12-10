@@ -8,9 +8,18 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="navbar-item">
-        <a class="nav-link" href='/login_form'>Login</a>
-      </li>
+      {% if not current_user.is_authenticated %}
+        <li class="navbar-item">
+          <a class="nav-link" href='/login_form'>Login</a>
+        </li>
+        <li class="navbar-item">
+          <a class="nav-link" href='/register_form'>Register</a>
+        </li>
+      {% else %}
+        <li class="navbar-item">
+          <a class="nav-link" href="{{ url_for('user.UserLogout') }}">Logout</a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </nav>

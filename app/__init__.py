@@ -9,7 +9,6 @@ from redis import Redis
 
 from app.blueprints import set_up_user_views
 
-
 ROOT_FOLDER = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_FOLDER = os.path.join(ROOT_FOLDER, 'templates')
 STATIC_FOLDER = os.path.join(ROOT_FOLDER, 'static')
@@ -41,3 +40,8 @@ def index(path):
     return render_template(
         'index.html.jinja2',
     )
+
+@login_manager.user_loader
+def load_user(user_id):
+    from app.entities.user.models import User
+    return User.query.get(user_id)
