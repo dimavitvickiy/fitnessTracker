@@ -2,3 +2,5 @@
 SQLALCHEMY_DATABASE_URI = ''
 # True or False
 DEBUG = False
+# 'XEwxaLZDeuvzqtanpB8u'
+SECRET_KEY = ''
