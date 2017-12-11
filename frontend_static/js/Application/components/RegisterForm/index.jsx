@@ -15,6 +15,10 @@ export class RegisterForm extends React.Component {
     };
   }
 
+  validForm() {
+    return this.state.username && (this.state.password1 === this.state.password2)
+  }
+
   @autobind
   onUserNameChange(e) {
     this.setState({
@@ -39,11 +43,17 @@ export class RegisterForm extends React.Component {
   @autobind
   onSubmit(e) {
     e.preventDefault();
+
+    if (!this.validForm()) {
+      console.log('Form invalid');
+      return
+    }
+
     const data = {
       username: this.state.username,
       password: this.state.password1,
     };
-    ApiRequest.post('/user/register', data)
+    ApiRequest.post('/user/list', data)
       .then(() => window.location = '/')
       .catch(() => console.log('error'));
   }
